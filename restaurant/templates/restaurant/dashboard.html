@@ -26,7 +26,6 @@
                             <th scope="col">Số điện thoại</th>
                             <th scope="col">Địa chỉ</th>
                             <th scope="col">Thành phố</th>
-                            <th scope="col">Thanh toán?</th>
                             <th scope="col">Chi tiết</th>
                         </tr>
                     </thead>
@@ -41,14 +40,6 @@
                             <td>{{ order.phone }}</td>
                             <td>{{ order.street }}</td>
                             <td>{{ order.city }}</td>
-                            <td>
-                                {% if order.is_paid %}
-                                <i style="color: green;" class="fas fa-check"></i>
-                                {% else %}
-                                <i style="color: red;" class="fas fa-times"></i>
-                                {% endif %}
-
-                            </td>
                             <td><a href="{% url 'order-details' order.pk %}"><i class="far fa-edit"></i></a></td>
                         </tr>
                         {% endfor %}
